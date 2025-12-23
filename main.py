@@ -1203,8 +1203,10 @@ def join_team():
     })
 
 def run_flask():
-    app.run(host='0.0.0.0', port=20144, debug=False, use_reloader=False)
-
+    # Render ka PORT environment variable uthayega, warna default 10000 karega
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False)
+    
 async def MaiiiinE():
     global connection_pool
     # Enhanced connection pool configuration
