@@ -1282,4 +1282,11 @@ async def StarTinG():
             print(f"ErroR TcP - {e} => ResTarTinG ...")
 
 if __name__ == '__main__':
+    # Flask ko pehle start karein taaki Render khush rahe
+    print("Starting Web Server...")
+    flask_thread = threading.Thread(target=run_flask, daemon=True)
+    flask_thread.start()
+    
+    # Ab Bot ko start karein
+    print("Starting Bot...")
     asyncio.run(StarTinG())
